@@ -4,70 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eliminar cuenta — QuikoYA</title>
+  <meta name="description" content="Solicita la eliminación de tu cuenta y datos en QuikoYA.">
   <link rel="icon" href="assets/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --primary:      #10B981;
-      --primary-dark: #059669;
-      --error:        #EF4444;
-      --text:         #0F172A;
-      --text-sub:     #64748B;
-      --bg:           #F1F5F9;
-      --border:       #E2E8F0;
-      --white:        #FFFFFF;
-    }
-
-    body {
-      font-family: 'Nunito', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* NAV */
-    nav {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      padding: 14px 32px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    nav a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    nav img { width: 32px; height: 32px; border-radius: 8px; object-fit: cover; }
-
-    nav span {
-      font-family: 'Fredoka', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    /* MAIN */
-    main {
-      flex: 1;
+    .delete-wrap {
+      min-height: calc(100vh - 64px - 280px);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 48px 24px;
+      background: var(--bg);
     }
 
-    .card {
+    .delete-card {
       background: white;
       border-radius: 24px;
       padding: 48px 40px;
@@ -89,10 +39,8 @@
 
     .icon-wrap svg { width: 32px; height: 32px; color: var(--error); }
 
-    h1 {
-      font-family: 'Fredoka', sans-serif;
+    .delete-card h1 {
       font-size: 26px;
-      font-weight: 700;
       margin-bottom: 10px;
     }
 
@@ -100,10 +48,10 @@
       color: var(--text-sub);
       font-size: 15px;
       line-height: 1.6;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
-    .warning {
+    .warning-box {
       background: rgba(239,68,68,0.07);
       border: 1px solid rgba(239,68,68,0.2);
       border-radius: 12px;
@@ -114,14 +62,13 @@
       line-height: 1.6;
     }
 
-    .warning strong { display: block; margin-bottom: 6px; font-size: 15px; }
+    .warning-box strong { display: block; margin-bottom: 6px; font-size: 15px; }
 
     label {
       display: block;
       font-size: 14px;
       font-weight: 700;
       margin-bottom: 6px;
-      color: var(--text);
     }
 
     input, textarea {
@@ -138,7 +85,10 @@
       outline: none;
     }
 
-    input:focus, textarea:focus { border-color: var(--primary); background: white; }
+    input:focus, textarea:focus {
+      border-color: var(--primary);
+      background: white;
+    }
 
     textarea { resize: vertical; min-height: 100px; }
 
@@ -166,11 +116,10 @@
       line-height: 1.6;
     }
 
-    /* SUCCESS */
     .success {
       display: none;
       text-align: center;
-      padding: 16px 0;
+      padding: 8px 0;
     }
 
     .success-icon {
@@ -184,36 +133,34 @@
     }
 
     .success-icon svg { width: 32px; height: 32px; color: var(--primary); }
-    .success h2 { font-family: 'Fredoka', sans-serif; font-size: 22px; margin-bottom: 10px; }
+    .success h2 { font-size: 22px; margin-bottom: 10px; }
     .success p { color: var(--text-sub); font-size: 15px; line-height: 1.6; }
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 13px;
-      color: var(--text-sub);
-      border-top: 1px solid var(--border);
-    }
-
-    footer a { color: var(--primary); text-decoration: none; }
-
     @media (max-width: 560px) {
-      .card { padding: 32px 24px; }
+      .delete-card { padding: 32px 24px; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
       <img src="assets/logo.png" alt="QuikoYA">
-      <span>Quiko<span style="color:#F59E0B">YA</span></span>
+      <span class="nav-logo-text">Quiko<span>YA</span></span>
     </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="privacy.html">Privacidad</a></li>
+      <li><a href="terms.html">Términos</a></li>
+      <li><a href="index.html#descarga" class="nav-cta">Descargar</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <main>
-    <div class="card">
+  <div class="delete-wrap">
+    <div class="delete-card">
 
       <div id="form-section">
         <div class="icon-wrap">
@@ -226,9 +173,9 @@
         </div>
 
         <h1>Eliminar cuenta</h1>
-        <p class="subtitle">Completa el formulario y procesaremos tu solicitud en un plazo de 7 días hábiles.</p>
+        <p class="subtitle">Completa el formulario y procesaremos tu solicitud en un plazo de <strong>7 días hábiles</strong>.</p>
 
-        <div class="warning">
+        <div class="warning-box">
           <strong>⚠️ Esta acción es irreversible</strong>
           Se eliminarán permanentemente tu cuenta, historial de pedidos, datos de perfil y toda la información asociada.
         </div>
@@ -243,7 +190,7 @@
           <button type="submit" class="btn-delete">Solicitar eliminación de cuenta</button>
         </form>
 
-        <p class="note">Recibirás un correo de confirmación en <strong>hola@quikoya.com</strong> cuando la solicitud sea procesada.</p>
+        <p class="note">Recibirás confirmación en <strong>hola@quikoya.com</strong> cuando la solicitud sea procesada.</p>
       </div>
 
       <div class="success" id="success-section">
@@ -257,31 +204,55 @@
       </div>
 
     </div>
-  </main>
+  </div>
 
-  <footer>
-    <a href="index.html">← Volver a QuikoYA</a> &nbsp;·&nbsp;
-    <a href="mailto:hola@quikoya.com">hola@quikoya.com</a>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-name">
+            <img src="assets/logo.png" alt="QuikoYA">
+            <span>Quiko<em>YA</em></span>
+          </div>
+          <p>Conectamos clientes con los proveedores más cercanos. Un pedido, múltiples opciones, ya mismo.</p>
+        </div>
+        <div class="footer-col">
+          <h4>App</h4>
+          <a href="index.html#como-funciona">Cómo funciona</a>
+          <a href="index.html#descarga">Descargar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Política de privacidad</a>
+          <a href="terms.html">Términos de uso</a>
+          <a href="delete-account.html">Eliminar cuenta</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="mailto:hola@quikoya.com">hola@quikoya.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 QuikoYA. Todos los derechos reservados.</span>
+        <a href="privacy.html">Política de privacidad</a>
+      </div>
+    </div>
   </footer>
 
+  <script src="js/main.js"></script>
   <script>
     document.getElementById('delete-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      const email = document.getElementById('email').value;
+      const email  = document.getElementById('email').value;
       const reason = document.getElementById('reason').value;
-
-      // Abre el cliente de correo con los datos prellenados
       const subject = encodeURIComponent('Solicitud de eliminación de cuenta — QuikoYA');
-      const body = encodeURIComponent(
+      const body    = encodeURIComponent(
         `Solicitud de eliminación de cuenta\n\nCorreo: ${email}\nMotivo: ${reason || 'No especificado'}\n\nFecha: ${new Date().toLocaleDateString('es-DO')}`
       );
       window.location.href = `mailto:hola@quikoya.com?subject=${subject}&body=${body}`;
-
-      // Mostrar pantalla de éxito
       document.getElementById('form-section').style.display = 'none';
       document.getElementById('success-section').style.display = 'block';
     });
   </script>
-
 </body>
 </html>

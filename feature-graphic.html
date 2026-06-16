@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1024px;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .banner {
+      width: 1024px;
+      height: 500px;
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Círculos decorativos */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .c1 { width: 500px; height: 500px; top: -200px; right: -100px; }
+    .c2 { width: 300px; height: 300px; bottom: -120px; left: 60px; }
+    .c3 { width: 150px; height: 150px; top: 40px; left: 300px; background: rgba(255,255,255,0.04); }
+
+    /* Contenido izquierdo */
+    .left {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50px;
+      padding: 6px 18px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    .logo-row img {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    h1 span { color: #F59E0B; }
+
+    .tagline {
+      font-family: 'Nunito', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 32px;
+      line-height: 1.4;
+    }
+
+    .pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
+    }
+
+    /* Derecha — mockup visual */
+    .right {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .phone-card {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 20px;
+      width: 200px;
+    }
+
+    .phone-card.main {
+      background: white;
+      width: 220px;
+    }
+
+    .card-header {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #10B981;
+      margin-bottom: 14px;
+    }
+
+    .phone-card.main .card-header { color: #10B981; }
+    .phone-card:not(.main) .card-header { color: white; }
+
+    .card-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .dot-green {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #10B981;
+      flex-shrink: 0;
+    }
+
+    .dot-white {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.6);
+      flex-shrink: 0;
+    }
+
+    .card-text {
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #0F172A;
+    }
+
+    .phone-card:not(.main) .card-text { color: white; }
+
+    .card-sub {
+      font-size: 11px;
+      color: #64748B;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .phone-card:not(.main) .card-sub { color: rgba(255,255,255,0.65); }
+
+    .card-btn {
+      margin-top: 14px;
+      background: #10B981;
+      color: white;
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .phone-card:not(.main) .card-btn {
+      background: rgba(255,255,255,0.25);
+    }
+
+    .card-price {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #10B981;
+      margin-top: 10px;
+    }
+
+    .phone-card:not(.main) .card-price { color: white; }
+
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="banner">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+
+    <!-- IZQUIERDA -->
+    <div class="left">
+      <div class="badge">📍 Un pedido, múltiples proveedores</div>
+      <div class="logo-row">
+        <img src="assets/logo.png" alt="QuikoYA">
+        <h1>Quiko<span>YA</span></h1>
+      </div>
+      <p class="tagline">Sin buscar números.<br>Sin llamadas. Pide ya.</p>
+      <div class="pills">
+        <div class="pill">⚡ Rápido</div>
+        <div class="pill">💬 Negocia el precio</div>
+        <div class="pill">📦 Seguimiento real</div>
+      </div>
+    </div>
+
+    <!-- DERECHA -->
+    <div class="right">
+      <div class="phone-card">
+        <div class="card-header">Pedidos cercanos</div>
+        <div class="card-row">
+          <div class="dot-white"></div>
+          <div>
+            <div class="card-text">Comida para llevar</div>
+            <div class="card-sub">0.3 km · hace 2 min</div>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="dot-white"></div>
+          <div>
+            <div class="card-text">Desayuno a domicilio</div>
+            <div class="card-sub">0.8 km · hace 5 min</div>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="dot-white"></div>
+          <div>
+            <div class="card-text">Almuerzo ejecutivo</div>
+            <div class="card-sub">1.1 km · hace 8 min</div>
+          </div>
+        </div>
+        <div class="card-btn">Ver pedidos →</div>
+      </div>
+
+      <div class="phone-card main">
+        <div class="card-header">Tu pedido</div>
+        <div class="card-row">
+          <div class="dot-green"></div>
+          <div>
+            <div class="card-text">Proveedor encontrado</div>
+            <div class="card-sub">3 respuestas recibidas</div>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="dot-green"></div>
+          <div>
+            <div class="card-text">Precio negociado</div>
+            <div class="card-sub">Confirmado por ambas partes</div>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="dot-green"></div>
+          <div>
+            <div class="card-text">En camino</div>
+            <div class="card-sub">Llegada estimada: 15 min</div>
+          </div>
+        </div>
+        <div class="card-price">¡Ya mismo! 🚀</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
