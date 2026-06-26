@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuikoYA — Un pedido, los proveedores más cercanos lo reciben</title>
-  <meta name="description" content="QuikoYA conecta clientes con proveedores cercanos en segundos. Sin buscar números de WhatsApp — haz tu pedido y los proveedores más cercanos lo reciben al instante.">
-  <meta property="og:title" content="QuikoYA — Un pedido, los proveedores más cercanos lo reciben">
-  <meta property="og:description" content="Sin buscar números. Sin llamadas. Haz tu pedido y recíbelo ya.">
+  <title>QuikoYA — Servicios locales, al instante</title>
+  <meta name="description" content="QuikoYA conecta clientes con proveedores de servicios locales en minutos. Describe lo que necesitas, recibe ofertas de proveedores cercanos y sigue todo en tiempo real.">
+  <meta property="og:title" content="QuikoYA — Servicios locales, al instante">
+  <meta property="og:description" content="Solicita cualquier servicio local y recibe respuestas de proveedores cercanos en minutos. Sin llamadas, sin búsquedas.">
   <meta property="og:image" content="assets/logo.png">
   <link rel="icon" href="assets/logo.png" type="image/png">
   <link rel="stylesheet" href="css/main.css">
@@ -42,7 +42,7 @@
       bottom: -150px; left: -150px;
     }
 
-    .hero-content { position: relative; z-index: 1; max-width: 660px; }
+    .hero-content { position: relative; z-index: 1; max-width: 680px; }
 
     .hero-badge {
       display: inline-flex;
@@ -82,6 +82,7 @@
       color: rgba(255,255,255,0.88);
       margin-bottom: 40px;
       font-weight: 500;
+      line-height: 1.5;
     }
 
     .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -143,6 +144,41 @@
 
     .step h3 { font-size: 21px; margin-bottom: 10px; }
     .step p { color: var(--text-sub); line-height: 1.65; font-size: 15px; }
+
+    /* ── FEATURES GRID ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 52px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-item:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,0.07); }
+
+    .feature-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: rgba(16,185,129,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .feature-text h4 { font-size: 16px; font-weight: 700; margin-bottom: 5px; color: var(--text); }
+    .feature-text p { font-size: 14px; color: var(--text-sub); line-height: 1.55; margin: 0; }
 
     /* ── FOR WHO ── */
     .for-who {
@@ -312,10 +348,10 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">📍 Los proveedores más cercanos, al instante</div>
+      <div class="hero-badge">🚀 La plataforma de servicios locales</div>
       <img src="assets/logo.png" alt="QuikoYA" class="hero-logo">
       <h1>Quiko<span>YA</span></h1>
-      <p class="hero-sub">Sin buscar números. Sin llamadas. Un pedido llega a los proveedores más cercanos.</p>
+      <p class="hero-sub">Solicita cualquier servicio local y recibe respuestas de proveedores cercanos en minutos. Sin llamadas, sin búsquedas.</p>
       <div class="hero-actions">
         <a href="#descarga" class="btn btn-store" id="descarga">
           <svg viewBox="0 0 24 24" fill="currentColor">
@@ -333,67 +369,120 @@
 
   <!-- STATS -->
   <div class="stats">
-    <div class="stat"><div class="stat-num">+50</div><div class="stat-label">Categorías disponibles</div></div>
-    <div class="stat"><div class="stat-num">0</div><div class="stat-label">Números que guardar</div></div>
+    <div class="stat"><div class="stat-num">+50</div><div class="stat-label">Categorías de servicio</div></div>
+    <div class="stat"><div class="stat-num">Gratis</div><div class="stat-label">Para clientes</div></div>
     <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Disponibilidad</div></div>
-    <div class="stat"><div class="stat-num">1</div><div class="stat-label">Solo un pedido</div></div>
+    <div class="stat"><div class="stat-num">GPS</div><div class="stat-label">Seguimiento en vivo</div></div>
   </div>
 
   <!-- HOW IT WORKS -->
   <section class="section section-bg" id="como-funciona">
     <div class="container text-center">
       <span class="section-label">¿Cómo funciona?</span>
-      <h2 class="section-title">Haz tu pedido, recibe ya</h2>
-      <p class="section-sub">¿Antojo de comida? ¿Necesitas algo ya? Un solo pedido llega a todos los proveedores cercanos — sin guardar números ni escribir por WhatsApp.</p>
+      <h2 class="section-title">Tres pasos, servicio en puerta</h2>
+      <p class="section-sub">Describe lo que necesitas, elige al proveedor que más te convenga y sigue todo en tiempo real. Así de simple.</p>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <h3>Haz tu pedido</h3>
-          <p>Escribe lo que necesitas — comida, productos, lo que sea — y QuikoYA lo distribuye a los proveedores más cercanos a ti.</p>
+          <h3>Crea tu solicitud</h3>
+          <p>Elige la categoría, describe lo que necesitas y comparte tu ubicación. Tu solicitud llega simultáneamente a los proveedores más cercanos.</p>
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <h3>El proveedor responde</h3>
-          <p>Los proveedores disponibles te contactan, negocias el precio y confirmas con quien prefieras.</p>
+          <h3>Recibe propuestas</h3>
+          <p>Los proveedores disponibles responden con su precio y condiciones. Revisa perfiles, calificaciones y elige al que mejor se adapte.</p>
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <h3>Recibe y listo</h3>
-          <p>Sigue el estado de tu pedido en tiempo real hasta que llegue donde estás.</p>
+          <h3>Sigue y confirma</h3>
+          <p>Rastrea la ubicación del proveedor en tiempo real, confirma la entrega y deja tu calificación al finalizar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="container text-center">
+      <span class="section-label">Funcionalidades</span>
+      <h2 class="section-title">Todo lo que necesitas, en una sola app</h2>
+      <p class="section-sub">Construida para que clientes y proveedores tengan la mejor experiencia posible.</p>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">📍</div>
+          <div class="feature-text">
+            <h4>Seguimiento GPS en vivo</h4>
+            <p>Sigue la ubicación del proveedor en tiempo real durante el servicio.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💬</div>
+          <div class="feature-text">
+            <h4>Chat integrado</h4>
+            <p>Comunícate directamente con el proveedor sin salir de la app.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⭐</div>
+          <div class="feature-text">
+            <h4>Calificaciones verificadas</h4>
+            <p>Sistema de valoración mutuo para construir confianza en la plataforma.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔔</div>
+          <div class="feature-text">
+            <h4>Notificaciones push</h4>
+            <p>Alertas en tiempo real en cada etapa: asignación, en camino, entrega.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📋</div>
+          <div class="feature-text">
+            <h4>Historial completo</h4>
+            <p>Accede a todos tus pedidos anteriores y repítelos con un toque.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📸</div>
+          <div class="feature-text">
+            <h4>Adjunta fotos</h4>
+            <p>Acompaña tu solicitud con imágenes para que el proveedor llegue preparado.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FOR WHO -->
-  <section class="section">
+  <section class="section section-bg">
     <div class="container">
       <div class="text-center">
         <span class="section-label">Para todos</span>
-        <h2 class="section-title">Dos lados, una sola app</h2>
-        <p class="section-sub">Tanto si quieres hacer un pedido como si eres el proveedor que lo cumple, QuikoYA es para ti.</p>
+        <h2 class="section-title">Dos lados, una sola plataforma</h2>
+        <p class="section-sub">Ya seas quien solicita o quien presta el servicio, QuikoYA está diseñada para ti.</p>
       </div>
       <div class="for-who">
         <div class="for-card client">
           <div class="card-icon">🛒</div>
           <h3>Para clientes</h3>
-          <p>Olvídate de buscar números de WhatsApp. Haz un pedido y los proveedores más cercanos lo reciben al instante.</p>
+          <p>Olvídate de buscar y llamar. Haz una solicitud y deja que los proveedores lleguen a ti.</p>
           <ul class="feature-list">
-            <li><span class="check">✓</span> Un pedido llega a varios proveedores</li>
-            <li><span class="check">✓</span> Negocia el precio directamente</li>
-            <li><span class="check">✓</span> Seguimiento en tiempo real</li>
-            <li><span class="check">✓</span> Historial de todos tus pedidos</li>
+            <li><span class="check">✓</span> Tu solicitud llega a varios proveedores a la vez</li>
+            <li><span class="check">✓</span> Compara precios y elige libremente</li>
+            <li><span class="check">✓</span> Seguimiento GPS en tiempo real</li>
+            <li><span class="check">✓</span> Califica y consulta tu historial</li>
           </ul>
         </div>
         <div class="for-card provider">
           <div class="card-icon">💼</div>
           <h3>Para proveedores</h3>
-          <p>Los clientes cercanos hacen pedidos y tú decides cuáles tomar. Sin publicidad, sin inversión — solo pedidos llegando a ti.</p>
+          <p>Clientes cercanos te encuentran solos. Sin publicidad, sin inversión — solo solicitudes llegando a tu teléfono.</p>
           <ul class="feature-list">
-            <li><span class="check">✓</span> Recibe pedidos de clientes cercanos</li>
-            <li><span class="check">✓</span> Tú propones el precio</li>
-            <li><span class="check">✓</span> Chat directo con el cliente</li>
-            <li><span class="check">✓</span> Sin límites con plan Pro</li>
+            <li><span class="check">✓</span> Recibe pedidos de clientes en tu zona</li>
+            <li><span class="check">✓</span> Propón tu precio y condiciones</li>
+            <li><span class="check">✓</span> Chat directo con cada cliente</li>
+            <li><span class="check">✓</span> Escala con el plan Pro sin límites</li>
           </ul>
         </div>
       </div>
@@ -401,24 +490,24 @@
   </section>
 
   <!-- SCREENSHOTS -->
-  <section class="section section-bg" id="capturas">
+  <section class="section" id="capturas">
     <div class="container text-center">
       <span class="section-label">La app</span>
-      <h2 class="section-title">Diseñada para ser simple</h2>
-      <p class="section-sub">Una experiencia limpia y rápida para conectar clientes y proveedores.</p>
+      <h2 class="section-title">Diseñada para ser simple y rápida</h2>
+      <p class="section-sub">Una experiencia limpia que conecta clientes y proveedores sin fricción.</p>
     </div>
     <div class="carousel-wrapper">
       <button class="carousel-btn prev" id="prev" aria-label="Anterior">&#8592;</button>
       <div class="screenshots-track" id="track">
         <div class="spacer"></div>
-        <div class="shot"><img src="assets/customer_home_screen.png" alt="Inicio"></div>
+        <div class="shot"><img src="assets/customer_home_screen.png" alt="Inicio del cliente"></div>
         <div class="shot"><img src="assets/mispedidos.png" alt="Mis pedidos"></div>
-        <div class="shot"><img src="assets/negociacion.png" alt="Negociación"></div>
+        <div class="shot"><img src="assets/negociacion.png" alt="Negociación de precio"></div>
         <div class="shot"><img src="assets/detallespedido.png" alt="Detalle de pedido"></div>
         <div class="shot"><img src="assets/pedidoasigando.png" alt="Pedido asignado"></div>
         <div class="shot"><img src="assets/pedidocompletado.png" alt="Pedido completado"></div>
-        <div class="shot"><img src="assets/pedidospendientes.png" alt="Pedidos pendientes"></div>
-        <div class="shot"><img src="assets/despacho.png" alt="Despacho"></div>
+        <div class="shot"><img src="assets/pedidospendientes.png" alt="Pedidos pendientes — vista proveedor"></div>
+        <div class="shot"><img src="assets/despacho.png" alt="Panel de despacho"></div>
         <div class="spacer"></div>
       </div>
       <button class="carousel-btn next" id="next" aria-label="Siguiente">&#8594;</button>
@@ -427,10 +516,10 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
-    <h2>¿Listo para probarlo?</h2>
-    <p>Descarga QuikoYA gratis y empieza a pedir ya mismo.</p>
-    <a href="#descarga" class="btn btn-store" style="margin: 0 auto;">
+  <section class="cta-section" id="descarga">
+    <h2>¿Listo para empezar?</h2>
+    <p>Descarga QuikoYA gratis y conecta con los mejores proveedores de tu zona.</p>
+    <a href="#" class="btn btn-store" style="margin: 0 auto;">
       <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
         <path d="M3.18 23.76c.3.17.65.2.99.08l13.7-7.93-2.83-2.84-11.86 10.69zM.5 1.4C.19 1.74 0 2.26 0 2.96v18.08c0 .7.19 1.22.5 1.56l.08.08 10.13-10.13v-.24L.58 1.32.5 1.4zM22.15 10.6l-2.88-1.67-3.19 3.19 3.19 3.2 2.9-1.68c.83-.48.83-1.56-.02-2.04zM4.17.24l13.7 7.93-2.83 2.84L3.18.32c.34-.22.72-.22.99-.08z"/>
       </svg>
@@ -450,7 +539,7 @@
             <img src="assets/logo.png" alt="QuikoYA">
             <span>Quiko<em>YA</em></span>
           </div>
-          <p>Conectamos clientes con los proveedores más cercanos. Un pedido, múltiples opciones, ya mismo.</p>
+          <p>Conectamos personas con proveedores de servicios locales. Una solicitud, múltiples opciones, ya mismo.</p>
         </div>
         <div class="footer-col">
           <h4>App</h4>
