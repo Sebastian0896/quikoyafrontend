@@ -3,11 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuikoYA — Servicios locales, al instante</title>
-  <meta name="description" content="QuikoYA conecta clientes con proveedores de servicios locales en minutos. Describe lo que necesitas, recibe ofertas de proveedores cercanos y sigue todo en tiempo real.">
-  <meta property="og:title" content="QuikoYA — Servicios locales, al instante">
+
+  <!-- Primary SEO -->
+  <title>QuikoYA — Servicios locales a domicilio, al instante</title>
+  <meta name="description" content="Solicita plomeros, electricistas, delivery y más en minutos. QuikoYA conecta clientes con proveedores locales cercanos. Sin llamadas, sin búsquedas — un pedido llega a varios proveedores a la vez.">
+  <meta name="keywords" content="servicios a domicilio, servicios locales, plomero cerca, electricista cerca, delivery local, proveedor de servicios, app servicios, QuikoYA">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#10B981">
+  <link rel="canonical" href="https://quikoya.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quikoya.com/">
+  <meta property="og:title" content="QuikoYA — Servicios locales a domicilio, al instante">
   <meta property="og:description" content="Solicita cualquier servicio local y recibe respuestas de proveedores cercanos en minutos. Sin llamadas, sin búsquedas.">
-  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:image" content="https://quikoya.com/assets/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es">
+  <meta property="og:site_name" content="QuikoYA">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="QuikoYA — Servicios locales a domicilio, al instante">
+  <meta name="twitter:description" content="Solicita cualquier servicio local y recibe respuestas de proveedores cercanos en minutos.">
+  <meta name="twitter:image" content="https://quikoya.com/assets/og-cover.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "QuikoYA",
+      "url": "https://quikoya.com",
+      "logo": "https://quikoya.com/assets/logo.png",
+      "description": "Plataforma de servicios locales a domicilio. Conecta clientes con proveedores cercanos en tiempo real.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hola@quikoya.com",
+        "contactType": "customer support"
+      },
+      "sameAs": []
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "QuikoYA",
+      "description": "Solicita plomeros, electricistas, delivery y más. Un pedido llega a los proveedores más cercanos al instante.",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "ANDROID",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "url": "https://quikoya.com",
+      "image": "https://quikoya.com/assets/logo.png",
+      "featureList": [
+        "Seguimiento GPS en tiempo real",
+        "Chat integrado con el proveedor",
+        "Sistema de calificaciones mutuo",
+        "Notificaciones push",
+        "Historial de pedidos",
+        "Adjuntar fotos a la solicitud"
+      ]
+    }
+  ]
+  </script>
+
   <link rel="icon" href="assets/logo.png" type="image/png">
   <link rel="stylesheet" href="css/main.css">
   <style>
@@ -336,8 +400,8 @@
     </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#como-funciona">Cómo funciona</a></li>
-      <li><a href="#capturas">La app</a></li>
-      <li><a href="privacy.html">Privacidad</a></li>
+      <li><a href="#funcionalidades">Funcionalidades</a></li>
+      <li><a href="#para-proveedores">Para proveedores</a></li>
       <li><a href="#descarga" class="nav-cta">Descargar</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
@@ -349,7 +413,7 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-badge">🚀 La plataforma de servicios locales</div>
-      <img src="assets/logo.png" alt="QuikoYA" class="hero-logo">
+      <img src="assets/logo.png" alt="QuikoYA" class="hero-logo" loading="eager">
       <h1>Quiko<span>YA</span></h1>
       <p class="hero-sub">Solicita cualquier servicio local y recibe respuestas de proveedores cercanos en minutos. Sin llamadas, sin búsquedas.</p>
       <div class="hero-actions">
@@ -402,7 +466,7 @@
   </section>
 
   <!-- FEATURES -->
-  <section class="section">
+  <section class="section" id="funcionalidades">
     <div class="container text-center">
       <span class="section-label">Funcionalidades</span>
       <h2 class="section-title">Todo lo que necesitas, en una sola app</h2>
@@ -455,7 +519,7 @@
   </section>
 
   <!-- FOR WHO -->
-  <section class="section section-bg">
+  <section class="section section-bg" id="para-proveedores">
     <div class="container">
       <div class="text-center">
         <span class="section-label">Para todos</span>
@@ -500,14 +564,14 @@
       <button class="carousel-btn prev" id="prev" aria-label="Anterior">&#8592;</button>
       <div class="screenshots-track" id="track">
         <div class="spacer"></div>
-        <div class="shot"><img src="assets/customer_home_screen.png" alt="Inicio del cliente"></div>
-        <div class="shot"><img src="assets/mispedidos.png" alt="Mis pedidos"></div>
-        <div class="shot"><img src="assets/negociacion.png" alt="Negociación de precio"></div>
-        <div class="shot"><img src="assets/detallespedido.png" alt="Detalle de pedido"></div>
-        <div class="shot"><img src="assets/pedidoasigando.png" alt="Pedido asignado"></div>
-        <div class="shot"><img src="assets/pedidocompletado.png" alt="Pedido completado"></div>
-        <div class="shot"><img src="assets/pedidospendientes.png" alt="Pedidos pendientes — vista proveedor"></div>
-        <div class="shot"><img src="assets/despacho.png" alt="Panel de despacho"></div>
+        <div class="shot"><img src="assets/customer_home_screen.png" alt="Inicio del cliente" loading="lazy"></div>
+        <div class="shot"><img src="assets/mispedidos.png" alt="Mis pedidos" loading="lazy"></div>
+        <div class="shot"><img src="assets/negociacion.png" alt="Negociación de precio" loading="lazy"></div>
+        <div class="shot"><img src="assets/detallespedido.png" alt="Detalle de pedido" loading="lazy"></div>
+        <div class="shot"><img src="assets/pedidoasigando.png" alt="Pedido asignado" loading="lazy"></div>
+        <div class="shot"><img src="assets/pedidocompletado.png" alt="Pedido completado" loading="lazy"></div>
+        <div class="shot"><img src="assets/pedidospendientes.png" alt="Pedidos pendientes — vista proveedor" loading="lazy"></div>
+        <div class="shot"><img src="assets/despacho.png" alt="Panel de despacho" loading="lazy"></div>
         <div class="spacer"></div>
       </div>
       <button class="carousel-btn next" id="next" aria-label="Siguiente">&#8594;</button>

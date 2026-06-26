@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quikoya.com/sitemap.xml
